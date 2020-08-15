@@ -1,7 +1,8 @@
 # Workbench Settings
 
-Linux Programs configuration files
+Linux programs configuration files
 
 ### Available configs
 
-- Vim
+- i3wm
+- vim
