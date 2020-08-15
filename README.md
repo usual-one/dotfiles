@@ -2,6 +2,6 @@
 
 Linux Programs configuration files
 
-# Available configs
+### Available configs
 
 - Vim
