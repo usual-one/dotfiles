@@ -1,6 +1,6 @@
-# Workbench Settings
+# Dotfiles
 
-Linux programs configuration files
+Linux programs configuration files & fonts
 
 ### Available configs
 

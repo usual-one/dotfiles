@@ -31,8 +31,8 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Language bindings
-exec_always --no-startup-id setxkbmap -layout us,ru
-exec_always --no-startup-id setxkbmap -option 'grp:ctrl_shift_toggle'
+exec_always --no-startup-id "setxkbmap -layout us,ru"
+exec_always --no-startup-id "setxkbmap -option 'grp:ctrl_shift_toggle'"
 
 # Background color
 exec_always --no-startup-id xsetroot -solid '#000000'
