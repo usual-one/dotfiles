@@ -6,3 +6,6 @@ Linux programs configuration files & fonts
 
 - i3wm
 - vim
+- Xresources
+  - URxvt
+
