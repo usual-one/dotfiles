@@ -9,6 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# setting mod key to `Super`
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -31,11 +32,16 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Language bindings
-exec_always --no-startup-id "setxkbmap -layout us,ru"
-exec_always --no-startup-id "setxkbmap -option 'grp:ctrl_shift_toggle'"
+exec --no-startup-id setxkbmap -layout 'us,ru' -option 'grp:ctrl_shift_toggle'
 
-# Background color
-exec_always --no-startup-id xsetroot -solid '#000000'
+# ----- Background -----
+# Solid color
+# exec --no-startup-id xsetroot -solid '#000000'
+# Image
+exec --no-startup-id feh --bg-scale ~/Images/Wallpapers/sky.jpg 
+
+# ----- URXVT -----
+exec --no-startup-id xrdb ~/.Xresources 
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -45,8 +51,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Changing screen backlight brightness via brightnessctl
-# bindsym XF86MonBrightnessDown exec brightnessctl -d 'radeon_bl0' s 10%- # decreasing backlight brightness
-# bindsym XF86MonBrightnessUp exec brightnessctl -d 'radeon_bl0' s +10% # increasing backlight brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d 'radeon_bl0' s 10%- # decreasing backlight brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d 'radeon_bl0' s +10% # increasing backlight brightness
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -193,4 +199,11 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        position top
 }
+
+# windows borders
+new_window pixel 1
+
+# window gaps
+gaps inner 10

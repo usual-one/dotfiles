@@ -1,0 +1,38 @@
+general {
+  colors = true
+  interval = 5
+}
+
+order += "wireless _first_"
+order += "battery all"
+order += "tztime local"
+
+battery all {
+  # available format values
+  # status, percentage, remaining, emptytime, consumption
+
+  format = "%status %percentage (rem. %remaining)"
+  status_chr = ""
+  status_bat = ""
+  status_unk = ""
+  status_full = ""
+
+  hide_seconds = true
+  integer_battery_capacity = true
+  last_full_capacity = true
+  low_threshold = 10
+  threshold_type = "time"
+}
+
+tztime local {
+  format = "%l:%M %p %e %B %Y"
+}
+
+wireless _first_ {
+  # available format values
+  # quality, frequency, essid, bitrate, ip
+
+  format_up = " %essid"
+  format_down = " Down"
+  format_quality = "%3d%s"
+}
