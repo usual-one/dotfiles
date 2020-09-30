@@ -25,15 +25,20 @@ set incsearch
 
 call plug#begin('~/.vim/plugged')
 
+" Gruvbox colorscheme
 Plug 'morhetz/gruvbox'
 Plug 'jremmen/vim-ripgrep'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'kien/ctrlp.vim'
-" Plug 'valloric/youcompleteme'
+" Autocomplition
+Plug 'valloric/youcompleteme'
 Plug 'mbbill/undotree'
 Plug 'vim-python/python-syntax'
+" Emmet plugin
 Plug 'mattn/emmet-vim'
+" Autocomplition for C#
+" Plug 'OmniSharp/omnisharp-vim'
 
 call plug#end()
 
@@ -67,6 +72,10 @@ nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
 
+" ----- YcmCompleter -----
+" Mappings
 nnoremap <silent> <Leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent> <Leader>gf :YcmCompleter FixIt<CR>
+" Settings
+set completeopt-=preview " disabling docs preview
 

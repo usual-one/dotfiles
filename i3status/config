@@ -1,9 +1,13 @@
 general {
   colors = true
+  color_good = "#98971A"
+  color_degraded = "#D79921"
+  color_bad = "#CC241D"
   interval = 5
 }
 
 order += "wireless _first_"
+order += "volume master"
 order += "battery all"
 order += "tztime local"
 
@@ -26,6 +30,14 @@ battery all {
 
 tztime local {
   format = "%l:%M %p %e %B %Y"
+}
+
+volume master {
+  format = " %volume"
+  format_muted = ""
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
 }
 
 wireless _first_ {

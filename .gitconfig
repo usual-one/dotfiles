@@ -1,0 +1,7 @@
+[user]
+	email = kostarev.a.p@gmail.com
+	name = Alexander Kostarev
+[pull]
+	rebase = false
+[core]
+	editor = vim
