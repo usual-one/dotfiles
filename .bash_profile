@@ -2,9 +2,8 @@
 # ~/.bash_profile
 #
 
+## Loading .bashrc
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-# Starting Xinit/StartX on login
-if [[ "$(tty)" = "/dev/tty1" ]]; then
-	pgrep i3 || startx
-fi
+## Loading .profile
+[[ -f ~/.profile ]] && . ~/.profile
