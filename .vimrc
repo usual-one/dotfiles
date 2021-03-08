@@ -43,7 +43,6 @@ Plug 'morhetz/gruvbox'
 Plug 'jremmen/vim-ripgrep'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
-Plug 'kien/ctrlp.vim'
 " Autocomplition
 Plug 'valloric/youcompleteme'
 Plug 'mbbill/undotree'

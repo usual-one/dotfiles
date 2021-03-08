@@ -43,9 +43,6 @@ exec --no-startup-id setxkbmap -layout 'us,ru' -option 'grp:ctrl_shift_toggle'
 # Image
 exec --no-startup-id feh --bg-scale ~/Images/Wallpapers/mikael-gustafsson.jpg 
 
-# ----- URXVT -----
-exec --no-startup-id xrdb ~/.Xresources 
-
 # Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status

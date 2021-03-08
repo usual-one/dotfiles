@@ -20,9 +20,6 @@ zmodload zsh/complist
 compinit
 # _comp_options+=(globdots)                # Include hidden files
 
-# Loading aliases if existent
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-
 # Enabling syntax highlighting. Must be at the end of the file
 (( ${+ZSH_HIGHLIGHT_STYLES} )) || typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]=none          # disabling path underline style
