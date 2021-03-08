@@ -15,7 +15,7 @@ sudo pacman -S --noconfirm --needed firefox
 
 # ----- display server -----
 echo "Installing display server..."
-sudo pacman -S --noconfirm --needed xorg-server xorg-xinit xorg-xrdb
+sudo pacman -S --noconfirm --needed xorg-server xorg-xinit xorg-xrdb xorg-xrandr
 cp .xinitrc .Xresources ~
 
 # ----- file manager -----
@@ -69,6 +69,6 @@ cp .gitconfig ~
 
 # ----- window manager -----
 echo "Installing window manager..."
-sudo pacman -S --noconfirm --needed i3 dmenu
+sudo pacman -S --noconfirm --needed i3-gaps i3status dmenu
 mkdir -p ~/.config
 cp -r i3 i3status ~/.config
