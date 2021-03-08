@@ -14,6 +14,10 @@ pacman -S --noconfirm --needed xorg-server xorg-xinit xorg-xrdb
 cp .xinitrc .Xresources ~
 xrdb ~/.Xresources
 
+# ----- fonts -----
+mkdir -p ~/.local/share/fonts
+cp fonts/* ~/.local/share/fonts
+
 # ----- version control system -----
 echo "Installing version control system..."
 pacman -S --noconfirm --needed git
@@ -39,8 +43,8 @@ pacman -S --noconfirm --needed vim curl
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp .vimrc ~
-source ~/.vimrc
 vim +PlugInstall +qall
+source ~/.vimrc
 
 # ----- version control system -----
 echo "Installing version control system..."
