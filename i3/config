@@ -41,7 +41,7 @@ exec --no-startup-id setxkbmap -layout 'us,ru' -option 'grp:ctrl_shift_toggle'
 # Solid color
 # exec --no-startup-id xsetroot -solid '#000000'
 # Image
-exec --no-startup-id feh --bg-scale ~/Images/Wallpapers/sea.jpg 
+exec --no-startup-id feh --bg-scale ~/Images/Wallpapers/mikael-gustafsson.jpg 
 
 # ----- URXVT -----
 exec --no-startup-id xrdb ~/.Xresources 
@@ -55,6 +55,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Changing screen backlight brightness via brightnessctl
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d 'radeon_bl0' s 10%- # decreasing backlight brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d 'radeon_bl0' s +10% # increasing backlight brightness
+
+# ----- Take screenshots via scrot -----
+# Screenshots will be put into clipboard via xclip
+# full window screenshot
+bindsym Print exec scrot ~/Images/Screenshots/%Y.%m.%d-%H:%M:%S.png -e 'xclip -selection clipboard -t image/png $f'
+# chosen part screenshot
+bindsym --release $mod+Print exec scrot -s ~/Images/Screenshots/%Y.%m.%d-%H:%M:%S.png -e 'xclip -selection clipboard -t image/png $f'
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -162,7 +169,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # assigning programs to certain workspaces
 assign [class="TelegramDesktop"] $ws1
-assign [class="Firefox"] $ws2
+assign [class="firefox"] $ws2
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

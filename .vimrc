@@ -1,8 +1,10 @@
+" syntax highlighting
 syntax on
 
 set noerrorbells
 
 " tab size
+" TODO: different for different types of files
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -11,11 +13,20 @@ set expandtab
 " line numbers
 set relativenumber
 
+" encoding
+set encoding=utf-8
+set fileencoding=utf-8
+
+" direction of window splitting
+set splitbelow
 set splitright
 
 set smartindent
 set nu
+
+" line wrapping
 set nowrap
+
 set smartcase
 set noswapfile
 set nobackup
@@ -23,6 +34,8 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 
+"" This config uses Vim-plug for plugin management
+"" It can be installed from https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/plugged')
 
 " Gruvbox colorscheme
@@ -38,7 +51,11 @@ Plug 'vim-python/python-syntax'
 " Emmet plugin
 Plug 'mattn/emmet-vim'
 " Autocomplition for C#
-" Plug 'OmniSharp/omnisharp-vim'
+Plug 'OmniSharp/omnisharp-vim'
+" Icons for files in file tree
+Plug 'ryanoasis/vim-devicons'
+" .editorconfig files support
+Plug 'editorconfig/editorconfig-vim'
 
 call plug#end()
 
@@ -67,7 +84,7 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
+nnoremap <leader>pv :vsp<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>

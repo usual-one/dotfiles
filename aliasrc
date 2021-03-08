@@ -1,5 +1,6 @@
 # colors
 alias ls='ls --color=auto'
+alias grep='grep --color'
 
 # vcs
 alias g='git'
@@ -21,3 +22,6 @@ alias gr='git remote'
 alias gra='git remote add'
 alias grs='git restore'
 alias gst='git status'
+
+# image view
+alias feh='feh --scale-down'
