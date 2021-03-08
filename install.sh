@@ -29,6 +29,10 @@ cp fonts/* ~/.local/share/fonts
 # ----- messenger -----
 sudo pacman -S --noconfirm --needed telegram-desktop
 
+# ----- screenshots -----
+sudo pacman -S --noconfirm --needed scrot xclip
+mkdir -p ~/Images/Screenshots
+
 # ----- terminal emulator -----
 echo "Installing terminal emulator..."
 sudo pacman -S --noconfirm --needed rxvt-unicode

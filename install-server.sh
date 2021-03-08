@@ -14,9 +14,18 @@ sudo pacman -S --noconfirm --needed man-db
 
 # ----- shell -----
 echo "Installing shell..."
+
 sudo pacman -S --noconfirm --needed zsh zsh-syntax-highlighting
-cp .bashrc .zshrc .bash_profile .zprofile .profile ~
-chsh -s /usr/bin/zsh
+
+mkdir -p ~/.config
+cp -r zsh ~/.config
+cp .bashrc .zshenv .bash_profile .profile ~
+
+shelldir=/usr/bin/zsh
+if [ $SHELL != $shelldir ]
+then
+  chsh -s $shelldir
+fi
 
 # ----- system info -----
 echo "Installing system info..."
