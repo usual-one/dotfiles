@@ -26,9 +26,12 @@ cp -r ranger ~/.config
 mkdir -p ~/.local/share/fonts
 cp fonts/* ~/.local/share/fonts
 
+# ----- messenger -----
+sudo pacman -S --noconfirm --needed telegram-desktop
+
 # ----- terminal emulator -----
 echo "Installing terminal emulator..."
-sudo pacman -S ---noconfirm --needed rxvt-unicode
+sudo pacman -S --noconfirm --needed rxvt-unicode
 
 # ----- window manager -----
 echo "Installing window manager..."
