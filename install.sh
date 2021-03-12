@@ -23,8 +23,10 @@ mkdir -p ~/.config
 cp -r ranger ~/.config
 
 # ----- fonts -----
+echo "Installing fonts..."
+sudo pacman -S --noconfirm --needed ttf-dejavu ttf-opensans ttf-fira-mono
 mkdir -p ~/.local/share/fonts
-cp fonts/* ~/.local/share/fonts
+cp -r fonts ~/.local/share
 
 # ----- messenger -----
 sudo pacman -S --noconfirm --needed telegram-desktop
