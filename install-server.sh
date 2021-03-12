@@ -41,7 +41,7 @@ cp -r neofetch ~/.config
 
 # ----- text editor -----
 echo "Installing text editor..."
-sudo pacman -S --noconfirm --needed vim curl python
+sudo pacman -S --noconfirm --needed gvim curl python
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp .vimrc ~
