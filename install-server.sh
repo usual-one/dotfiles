@@ -27,6 +27,12 @@ then
   chsh -s $shelldir
 fi
 
+# ----- ssh -----
+echo "Installing ssh..."
+sudo pacman -S --noconfirm --needed openssh
+mkdir -p ~/.ssh
+cp -r .ssh/config ~/.ssh
+
 # ----- system info -----
 echo "Installing system info..."
 sudo pacman -S --noconfirm --needed neofetch
