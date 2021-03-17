@@ -3,10 +3,11 @@
 # configuration files for them on Arch Linux or other Arch-based distributions
 
 # Should be ran from repo directory
+
 # ----- aliases -----
 echo "Installing aliases"
-mkdir -p ~/.config
-cp aliasrc ~/.config
+mkdir -p $HOME/.config
+cp aliasrc $HOME/.config
 
 # ----- man pages -----
 echo "Installing man pages..."
@@ -17,9 +18,9 @@ echo "Installing shell..."
 
 sudo pacman -S --noconfirm --needed zsh zsh-syntax-highlighting
 
-mkdir -p ~/.config
-cp -r zsh ~/.config
-cp .bashrc .zshenv .bash_profile .profile ~
+mkdir -p $HOME/.config
+cp -r zsh $HOME/.config
+cp .bashrc .zshenv .bash_profile .profile $HOME
 
 shelldir=/usr/bin/zsh
 if [ $SHELL != $shelldir ]
@@ -30,25 +31,37 @@ fi
 # ----- ssh -----
 echo "Installing ssh..."
 sudo pacman -S --noconfirm --needed openssh
-mkdir -p ~/.ssh
-cp -r .ssh/config ~/.ssh
+mkdir -p $HOME/.ssh
+cp -r .ssh/config $HOME/.ssh
 
 # ----- system info -----
 echo "Installing system info..."
 sudo pacman -S --noconfirm --needed neofetch
-mkdir -p ~/.config
-cp -r neofetch ~/.config
+mkdir -p $HOME/.config
+cp -r neofetch $HOME/.config
 
 # ----- text editor -----
 echo "Installing text editor..."
 sudo pacman -S --noconfirm --needed gvim curl python
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-cp .vimrc ~
+cp .vimrc $HOME
 vim +PlugInstall +qall
-source ~/.vimrc
+source $HOME/.vimrc
 
 # ----- version control system -----
 echo "Installing version control system..."
 sudo pacman -S --noconfirm --needed git
-cp .gitconfig ~
+cp .gitconfig $HOME
+
+# ----- AUR helper -----
+echo "Installing AUR helper..."
+WD=`pwd`
+if ! command -v 'paru' >/dev/null; then
+  sudo pacman -S --noconfirm --needed base-devel
+  mkdir -p $HOME/Utils
+  git clone 'https://aur.archlinux.org/paru.git' "$HOME/Utils/paru"
+  cd "$HOME/Utils/paru" || exit 1
+  makepkg -si
+  cd "$WD" || exit 1
+fi
