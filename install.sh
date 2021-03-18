@@ -36,10 +36,6 @@ paru -S --noconfirm --needed rocketchat-desktop
 sudo pacman -S --noconfirm --needed scrot xclip
 mkdir -p $HOME/Images/Screenshots
 
-# ----- terminal emulator -----
-echo "Installing terminal emulator..."
-sudo pacman -S --noconfirm --needed rxvt-unicode
-
 # ----- vpn -----
 echo "Installing vpn..."
 sudo pacman -S --noconfirm --needed openvpn

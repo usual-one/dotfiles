@@ -40,6 +40,10 @@ sudo pacman -S --noconfirm --needed neofetch
 mkdir -p $HOME/.config
 cp -r neofetch $HOME/.config
 
+# ----- terminal emulator -----
+echo "Installing terminal emulator..."
+sudo pacman -S --noconfirm --needed rxvt-unicode
+
 # ----- text editor -----
 echo "Installing text editor..."
 sudo pacman -S --noconfirm --needed gvim curl python
