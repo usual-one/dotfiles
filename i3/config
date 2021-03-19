@@ -53,8 +53,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Changing screen backlight brightness via brightnessctl
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d 'radeon_bl0' s 10%- # decreasing backlight brightness
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d 'radeon_bl0' s +10% # increasing backlight brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl -d '*' s 10%- # decreasing backlight brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl -d '*' s +10% # increasing backlight brightness
 
 # ----- Take screenshots via scrot -----
 # Screenshots will be put into clipboard via xclip

@@ -20,6 +20,10 @@ echo "Installing display server..."
 sudo pacman -S --noconfirm --needed xorg-server xorg-xinit xorg-xrdb xorg-xrandr
 cp .xinitrc .Xresources $HOME
 
+# ----- utilities -----
+# brightness control
+sudo pacman -S --noconfirm --needed brightnessctl
+
 # ----- sound server -----
 echo "Installing sound server..."
 sudo pacman -S --noconfirm --needed pulseaudio
