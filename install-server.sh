@@ -42,11 +42,16 @@ cp -r neofetch $HOME/.config
 
 # ----- text editor -----
 echo "Installing text editor..."
-sudo pacman -S --noconfirm --needed gvim curl python
+sudo pacman -S --noconfirm --needed gvim curl
 curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 cp .vimrc $HOME
 vim +PlugInstall +qall
+# IMPORTANT: You should install YouCompleteMe plugin manually like this
+# sudo pacman -S cmake python
+# cd $HOME/.vim/plugged/youcompleteme
+# ./install.py --all
+# sudo pacman -Rns cmake python
 source $HOME/.vimrc
 
 # ----- version control system -----

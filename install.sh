@@ -11,10 +11,18 @@
 echo "Installing browser..."
 sudo pacman -S --noconfirm --needed firefox
 
+mkdir -p $HOME/.local/share/
+cp -r mime $HOME/.local/share/
+update-mime-database $HOME/.local/share/mime
+
 # ----- display server -----
 echo "Installing display server..."
 sudo pacman -S --noconfirm --needed xorg-server xorg-xinit xorg-xrdb xorg-xrandr
 cp .xinitrc .Xresources $HOME
+
+# ----- sound server -----
+echo "Installing sound server..."
+sudo pacman -S --noconfirm --needed pulseaudio
 
 # ----- file manager -----
 echo "Installing file manager..."
