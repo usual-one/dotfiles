@@ -44,6 +44,9 @@ cp -r fonts $HOME/.local/share
 sudo pacman -S --noconfirm --needed telegram-desktop discord
 paru -S --noconfirm --needed rocketchat-desktop
 
+# ----- image preview -----
+sudo pacman -S --noconfirm --needed feh imagemagick
+
 # ----- screenshots -----
 sudo pacman -S --noconfirm --needed scrot xclip
 mkdir -p $HOME/Images/Screenshots
@@ -54,6 +57,14 @@ sudo pacman -S --noconfirm --needed openvpn
 
 # ----- window manager -----
 echo "Installing window manager..."
-sudo pacman -S --noconfirm --needed i3-gaps i3status dmenu
+sudo pacman -S --noconfirm --needed i3-gaps dmenu
 mkdir -p $HOME/.config
-cp -r i3 i3status $HOME/.config
+cp -r i3 $HOME/.config
+
+# ----- status bar -----
+echo "Installing status bar..."
+mkdir -p $HOME/.config
+# sudo pacman -S --noconfirm --needed i3status # for i3status
+# cp -r i3status $HOME/.config # for i3status
+paru -S --noconfirm --needed polybar # for polybar
+cp -r polybar $HOME/.config # for polybar
