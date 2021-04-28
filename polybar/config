@@ -33,7 +33,7 @@ background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 2
-line-color = #f00 ;fallback
+line-color = #f00
 
 border-size = 1
 border-color = #00000000
