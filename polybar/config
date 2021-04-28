@@ -26,7 +26,7 @@ height = 25
 offset-x = 0
 offset-y = 0
 
-radius = 7
+radius-bottom = 15
 fixed-center = false
 
 background = ${colors.background}
@@ -35,7 +35,7 @@ foreground = ${colors.foreground}
 line-size = 2
 line-color = #f00
 
-border-size = 1
+border-size = 0
 border-color = #00000000
 padding-left = 0
 padding-right = 0
@@ -49,7 +49,7 @@ font-3 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = 
-modules-right = xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = pulseaudio xbacklight memory cpu temperature wlan eth xkeyboard battery date powermenu
 
 ;tray-position = right
 ;tray-padding = 2
