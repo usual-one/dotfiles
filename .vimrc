@@ -1,7 +1,9 @@
 " syntax highlighting
 syntax on
 
+" disable beeps
 set noerrorbells
+set belloff=all
 
 " tab size
 " TODO: different for different types of files
