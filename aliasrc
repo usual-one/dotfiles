@@ -1,3 +1,10 @@
+# changing directory
+alias ..='cd ..'
+alias .1='cd ..'
+alias .2='cd ../..'
+alias .3='cd ../../..'
+alias .4='cd ../../../..'
+
 # colors
 alias ls='ls --color=auto'
 alias grep='grep --color'
