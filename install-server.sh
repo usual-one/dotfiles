@@ -5,7 +5,7 @@
 # Should be ran from repo directory
 
 # ----- aliases -----
-echo "Installing aliases"
+echo "Installing aliases..."
 mkdir -p $HOME/.config
 cp aliasrc $HOME/.config
 
@@ -35,7 +35,7 @@ mkdir -p $HOME/.ssh
 cp -r .ssh/config $HOME/.ssh
 
 # ----- system info -----
-echo "Installing system info..."
+echo "Installing system info utils..."
 sudo pacman -S --noconfirm --needed neofetch
 mkdir -p $HOME/.config
 cp -r neofetch $HOME/.config

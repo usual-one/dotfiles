@@ -12,6 +12,7 @@ alias grep='grep --color'
 # vcs
 alias g='git'
 alias ga='git add'
+alias gaa='git add -A'
 alias gb='git branch'
 alias gbd='git branch -d'
 alias gbD='git branch -D'
@@ -28,7 +29,10 @@ alias gp='git push'
 alias gr='git remote'
 alias gra='git remote add'
 alias grs='git restore'
+alias grss='git restore -S'
 alias gst='git status'
+alias gs='git stash'
+alias gsa='git stash apply'
 
 # image view
 alias feh='feh --scale-down'

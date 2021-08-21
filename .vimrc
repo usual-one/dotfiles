@@ -67,6 +67,8 @@ Plug 'OmniSharp/omnisharp-vim'
 Plug 'ryanoasis/vim-devicons'
 " .editorconfig files support
 Plug 'editorconfig/editorconfig-vim'
+" git commands
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
