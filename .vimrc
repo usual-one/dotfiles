@@ -72,6 +72,10 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
+" ----- Color scheme -----
+let g:gruvbox_italic=1 " enable italic font
+let g:gruvbox_italicize_comments=1 " preview comments in italic
+let g:gruvbox_invert_selection=0 " disable color inversion if selected
 colorscheme gruvbox
 set background=dark
 set t_Co=256
