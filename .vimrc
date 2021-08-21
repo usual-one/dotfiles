@@ -43,12 +43,22 @@ call plug#begin('~/.vim/plugged')
 " Gruvbox colorscheme
 Plug 'morhetz/gruvbox'
 Plug 'jremmen/vim-ripgrep'
+" JSDOC comments generation
+Plug 'heavenshell/vim-jsdoc', {
+      \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
+      \ 'do': 'make install'
+\}
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 " Autocomplition
 Plug 'valloric/youcompleteme'
 Plug 'mbbill/undotree'
 Plug 'vim-python/python-syntax'
+" Commenting stuff out
+Plug 'preservim/nerdcommenter'
+" Fuzzy file search
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 " Emmet plugin
 Plug 'mattn/emmet-vim'
 " Autocomplition for C#
@@ -71,9 +81,6 @@ if executable('rg')
     let g:rg_derive_root = 'true'
 endif
 
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standart']
-let g:ctrlp_use_caching = 0
-
 let mapleader = " "
 
 let g:netrw_browse_split=2
@@ -89,6 +96,18 @@ nnoremap <leader>pv :vsp<bar> :Ex <bar> :vertical resize 30<CR>
 nnoremap <Leader>ps :Rg<SPACE>
 nnoremap <Leader>+ :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
+
+" ----- Commenting stuff out -----
+let g:NERDSpaceDelims = 1
+
+" ----- Fuzzy file search -----
+" position of prompt
+let g:fzf_layout = { 'down': '30%' }
+
+" search in working directory
+nnoremap <C-P> :FZF<CR>
+" search in parent directory of Current file
+nnoremap <C-P>c :FZF %:p:h<CR>
 
 " ----- YcmCompleter -----
 " Mappings
