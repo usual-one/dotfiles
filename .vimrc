@@ -11,9 +11,11 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set expandtab
+set smartindent
 
 " line numbers
-set relativenumber
+set relativenumber " line numbering starts from current line
+set nu " current line number is its number from beggining of file
 
 " encoding
 set encoding=utf-8
@@ -23,18 +25,23 @@ set fileencoding=utf-8
 set splitbelow
 set splitright
 
-set smartindent
-set nu
-
 " line wrapping
 set nowrap
 
-set smartcase
+" search
+set ignorecase " search case-insensitively always
+set smartcase " search case-sensitively if capitals are in search string
+set incsearch " show search results while typing
+
+" history
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
-set incsearch
+
+" scrolling
+set scrolloff=8 " scroll when moved to n lines from edge of file
+
 
 "" This config uses Vim-plug for plugin management
 "" It can be installed from https://github.com/junegunn/vim-plug
