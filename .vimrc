@@ -49,12 +49,12 @@ call plug#begin('~/.vim/plugged')
 
 " Gruvbox colorscheme
 Plug 'morhetz/gruvbox'
-Plug 'jremmen/vim-ripgrep'
 " JSDOC comments generation
 Plug 'heavenshell/vim-jsdoc', {
       \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
       \ 'do': 'make install'
 \}
+" TypeScript syntax
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 " Autocomplition
@@ -76,6 +76,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'editorconfig/editorconfig-vim'
 " git commands
 Plug 'tpope/vim-fugitive'
+" linting
+Plug 'w0rp/ale'
 
 call plug#end()
 
@@ -86,6 +88,8 @@ let g:gruvbox_invert_selection=0 " disable color inversion if selected
 colorscheme gruvbox
 set background=dark
 set t_Co=256
+
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim/plugged/youcompleteme/.ycm_extra_conf.py'
 
 " python-syntax plugin - extended highlighting
 let g:python_highlight_all = 1
@@ -100,15 +104,27 @@ let g:netrw_browse_split=2
 let g:netrw_banner=0
 let g:netrw_winsize = 25
 
+nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>pv :vsp<bar> :Ex <bar> :vertical resize 30<CR>
+
+" ----- Managing windows -----
+" move between windows
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
-nnoremap <leader>u :UndotreeShow<CR>
-nnoremap <leader>pv :vsp<bar> :Ex <bar> :vertical resize 30<CR>
-nnoremap <Leader>ps :Rg<SPACE>
-nnoremap <Leader>+ :vertical resize +5<CR>
+" resize windows
+nnoremap <Leader>= :vertical resize +5<CR>
 nnoremap <Leader>- :vertical resize -5<CR>
+
+" ----- Terminal -----
+" open terminal Inside vim
+"   To move between terminal and vim buffers use <C-W>h(j,k,l)
+"   To close terminal use <C-D>
+nnoremap <Leader>ti :vert term<CR>
+" open terminal Outside vim
+"   To close terminal use <C-D>
+nnoremap <Leader>to :sh<CR>
 
 " ----- Commenting stuff out -----
 let g:NERDSpaceDelims = 1
@@ -117,10 +133,14 @@ let g:NERDSpaceDelims = 1
 " position of prompt
 let g:fzf_layout = { 'down': '30%' }
 
-" search in working directory
-nnoremap <C-P> :FZF<CR>
-" search in parent directory of Current file
-nnoremap <C-P>c :FZF %:p:h<CR>
+" search Filenames in working directory
+nnoremap <C-p>f :FZF<CR>
+" search filenames in parent directory of Current file
+nnoremap <C-p>c :FZF %:p:h<CR>
+" search Words in files in working directory
+nnoremap <C-p>w :Rg<Space>
+" search word Under cursor in files in working directory
+nnoremap <C-p>u yiw:Rg <C-r>"<CR>
 
 " ----- YcmCompleter -----
 " Mappings

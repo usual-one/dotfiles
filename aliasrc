@@ -36,3 +36,6 @@ alias gsa='git stash apply'
 
 # image view
 alias feh='feh --scale-down'
+
+# text editing
+alias v='vim'
