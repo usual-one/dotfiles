@@ -7,7 +7,7 @@ alias .4='cd ../../../..'
 
 # colors
 # alias ls='ls --color=auto'
-alias ls='eza --tree --level=1' # required utilities: eza
+alias ls='eza --tree --level=1 --group-directories-first' # required utilities: eza
 alias grep='grep --color'
 
 # vcs
