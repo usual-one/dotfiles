@@ -28,6 +28,9 @@ then
   chsh -s $shelldir
 fi
 
+# ----- file tree on `ls` -----
+sudo pacman -S --noconfirm --needed eza
+
 # ----- ssh -----
 echo "Installing ssh..."
 sudo pacman -S --noconfirm --needed openssh
